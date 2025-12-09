@@ -61,7 +61,8 @@ function App() {
       toast.success(`Пост для сегмента ${currentChunkIndex + 1} успешно сгенерирован!`, { id: toastId });
     } catch (error) {
       console.error(error);
-      toast.error(`Ошибка генерации: ${error.message}`, { id: toastId });
+      const errorMessage = error instanceof Error ? error.message : 'Произошла неизвестная ошибка.';
+      toast.error(`Ошибка генерации: ${errorMessage}`, { id: toastId });
     } finally {
       setLoading(false);
     }
@@ -96,7 +97,8 @@ function App() {
       toast.success('Контент успешно загружен!', { id: toastId });
     } catch (error) {
       console.error(error);
-      toast.error(`Не удалось загрузить контент: ${error.message}`, { id: toastId });
+      const errorMessage = error instanceof Error ? error.message : 'Не удалось загрузить контент.';
+      toast.error(errorMessage, { id: toastId });
     } finally {
       setLoading(false);
     }
@@ -129,7 +131,8 @@ function App() {
       toast.success(`Пост для сегмента ${currentChunkIndex + 1} успешно опубликован!`, { id: toastId });
     } catch (error) {
       console.error(error);
-      toast.error(`Ошибка публикации: ${error.message}`, { id: toastId });
+      const errorMessage = error instanceof Error ? error.message : 'Произошла неизвестная ошибка.';
+      toast.error(`Ошибка публикации: ${errorMessage}`, { id: toastId });
     } finally {
       setLoading(false);
     }

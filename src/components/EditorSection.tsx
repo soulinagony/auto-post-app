@@ -1,6 +1,5 @@
 import { useAppStore } from '../store/useAppStore'; // Keep useAppStore to potentially update generated content directly if needed
 import { RefreshCcw, Send, ChevronRight, ChevronLeft, Image as ImageIcon } from 'lucide-react'; // Added ChevronLeft
-import { clsx } from 'clsx';
 
 interface EditorSectionProps {
   onRegenerate: () => void;

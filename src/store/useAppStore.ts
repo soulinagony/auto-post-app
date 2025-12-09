@@ -55,7 +55,7 @@ export const useAppStore = create<AppState>()(
         })),
       setSourceUrl: (url) => set({ sourceUrl: url }),
       
-      setTextChunks: (chunks) => set((state) => {
+      setTextChunks: (chunks) => set(() => {
         // Initialize generatedChunks array with empty values for new chunks
         const newGeneratedChunks = chunks.map(() => ({ post: '', imageUrl: '' }));
         return { 
